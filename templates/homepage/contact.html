@@ -1,0 +1,370 @@
+{% extends "basic.html" %}
+{% load static %}
+
+
+{% block head %}
+<style>
+    *, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fff 0%, #b5fbff 100%);
+}
+
+body, button, input {
+  font-family: 'Montserrat', sans-serif;
+
+  letter-spacing: 1.4px;
+}
+
+.background {
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ea1d6f;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: #ea1d6f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 14px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+  color: #cfcfcf;
+  font-size: 16px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: #ea1d6f;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  color: #b9134f;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: #000;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.credits-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dribbble {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .screen-body {
+    flex-direction: column;
+  }
+
+  .screen-body-item.left {
+    margin-bottom: 30px;
+  }
+
+  .app-title {
+    flex-direction: row;
+  }
+
+  .app-title span {
+    margin-right: 12px;
+  }
+
+  .app-title:after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen-body {
+    padding: 40px;
+  }
+
+  .screen-body-item {
+    padding: 0;
+  }
+}
+
+</style>
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+<div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+          <div class="screen-header-button close"></div>
+          <div class="screen-header-button maximize"></div>
+          <div class="screen-header-button minimize"></div>
+        </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>ABOUT</span>
+            <span>US</span>
+          </div>
+          <div class="app-contact">
+              <u>Contact us</u><br>
+              Mobile: +91 9562494355
+          <br>
+            Email: jkb17291@gmail.com
+          </div>
+        </div>
+        <div class="screen-body-item">
+          <div class="app-form">
+            <div class="app-form-group">
+              Nowadays, people face a variety of diseases due to their living habits and changing environmental conditions. It could have happened before you or anyone near you needed urgent assistance from the doctor, but you couldn't locate anyone. It is beneficial to get quick and adequate medical facilities for patients by developing a model that can predict diseases based on user symptoms.
+            </div>
+            <div class="app-form-group">
+               Many lives can be saved by the correct review of data and accurately predicting diseases from symptoms. But it becomes too difficult for a doctor to predict accurately based on symptoms. The most difficult task is the accurate prediction of disease. As generally said, "Prevention is better than cure," disease prediction and infectious outbreak will contribute to early prevention of a disease occurrence
+            </div>
+            <div class="app-form-group buttons">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="credits">
+      Made with ❤️
+      <a class="credits-link" href="https://www.instagram.com/__j__k__b__/" target="_blank">
+        by JKB
+      </a>
+    </div>
+  </div>
+</div>
+<!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_menu">
+            <h5>
+              QUICK LINKS
+            </h5>
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}"> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}"> Diseases </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Sign in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_course">
+            <h5>
+              Health Checker
+            </h5>
+            <p>
+             Predict your diseases, get medication and treatment from professional physicians. Be healthy.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-5 offset-md-1">
+          <div class="info_news">
+            <h5>
+              FOR ANY QUERY, PLEASE WRITE TO US
+            </h5>
+            <div class="info_contact">
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i> HealthChecker@mail.com
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i> Call : +91 1234567890
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By Health Checker
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+{% endblock %}

@@ -1,0 +1,477 @@
+﻿{% extends "basic.html" %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="{% static 'homepage/assets/home/images/s4.png' %}" type="image/x-icon">
+
+    <title>Health Checker</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/assets/home/css/bootstrap.css' %}" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+    <!-- nice select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+    <!-- datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'homepage/assets/home/css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'homepage/assets/home/css/responsive.css' %}" rel="stylesheet" />
+  </head>
+
+<body>
+  <div class="hero_area">
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <div>
+                      <h1>
+                        health checker
+                      </h1>
+                      <p>
+A web application to diagnose the disease based on the symptoms given by the user and suggesting the preventions to deal with some common disease.Disease diagnosis plays a pivotal role in healthcare informatics. It is crucial to diagnose the disease at an early stage. The lack or delay in proper treatment can also lead to the death of patients. Therefore disease diagnosis can prove to be life saving in many cases.
+                      </p>
+                      <a href="{% url 'sign_in_patient' %}">
+                        Check Disease
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'homepage/slider-img.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <div>
+                      <h1>
+                        health checker
+                      </h1>
+                      <p>
+Disease diagnose system can assist doctors, physicians and healthcare professionals in effective decision making for disease diagnosis as well.Machine Learning is an emerging approach that helps in diagnosis, diagnosis of a disease. The accuracy of an algorithm is determined by the performance on the given dataset. Our model is able to diagnose data with 90% average accuracy.                      </p>
+                      <a href="{% url 'sign_in_patient' %}">
+                        Check Disease
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'homepage/slider-img.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <div>
+                      <h1>
+                        health checker
+                      </h1>
+                      <p>Login as patient to check your disease</p>
+                      <a href="{% url 'sign_in_patient' %}">
+                        Login Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'homepage/slider-img.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- special section -->
+
+  <section class="special_section">
+    <div class="container">
+      <div class="special_container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box b1">
+
+              <div class="detail-box">
+                <h4>
+                  Login as Patient to check your disease
+
+                </h4>
+                <a href="{% url 'sign_in_patient' %}">
+                  Check Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box b2">
+              <div class="detail-box">
+                <h4>
+                  Are you a registered doctor?
+                </h4>
+                <a href="{% url 'sign_in_doctor' %}">
+                  Login Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box b3">
+              <div class="detail-box">
+                <h4>
+                  Admin Login
+                </h4>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <a href="{% url 'sign_in_admin' %}">
+                  Login Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end special section -->
+
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          <span class="design_dot"></span>
+          About Our Website
+        </h2>
+      </div>
+      <div class="col-md-7 mx-auto px-0">
+        <div class="img-box b2">
+          <img src="{% static 'homepage/about-img.png' %}" alt="" />
+        </div>
+      </div>
+      <div class="col-md-9 mx-auto px-0">
+        <div class="detail-box">
+          <p>
+            Disease diagnosis plays a pivotal role in healthcare informatics. The lack or delay in proper treatment can also lead to the death of patients. Therefore disease diagnosis can prove to be life saving in many cases. Disease diagnose system can assist doctors, physicians and healthcare professionals in effective decision making for disease diagnosis as well.
+          The disease is diagnosed using the machine learning algorithm and the user has to enter the symptoms from the given options.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          <span class="design_dot"></span>
+          Diseases we predict
+        </h2>
+        <p>
+          The prediction is only for informative, for treatment always consult a physician.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-4 mx-auto">
+          <div class="box">
+            <a href=" {% url 'sign_in_patient' %}">
+              Heart attack
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mx-auto">
+          <div class="box">
+            <a href=" {% url 'sign_in_patient' %}">
+              Tuberculosis
+            </a>
+          </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-4 mx-auto">
+          <div class="box">
+            <a href=" {% url 'sign_in_patient' %}">
+              Dengue
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mx-auto">
+          <div class="box">
+            <a href=" {% url 'sign_in_patient' %}">
+              Hypertension
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mx-auto">
+          <div class="box">
+            <a href=" {% url 'sign_in_patient' %}">
+              Pneumonia
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="{% url 'sign_in_patient' %}">
+          View All
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- book section -->
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form>
+            <h4>
+              <span class="design_dot"></span>
+              Doctors we have
+            </h4>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <p>Rheumatologist</p>
+              </div>
+              <div class="form-group col-lg-4">
+                Cardiologist
+              </div>
+              <div class="form-group col-lg-4">
+                ENT specialist
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+               Orthopedist
+              </div>
+              <div class="form-group col-lg-4">
+                Neurologist
+              </div>
+              <div class="form-group col-lg-4">
+                Allergist/Immunologist
+                </div>
+                    </div>
+            <br>
+       <div class="form-row ">
+              <div class="form-group col-lg-4">
+               Urologist
+                </div>
+              <div class="form-group col-lg-4">
+                Dermatologist
+                </div>
+              <div class="form-group col-lg-4">
+                Gastroenterologist
+                </div>
+                </div>
+      </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end book section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          <span class="design_dot"></span>
+          Precautions
+        </h2>
+      </div>
+    </div>
+    <div class="container px-0">
+      <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="box">
+              <div class="client_info">
+                <div class="client_name">
+                  <h5>
+                   Standard precautions
+                  </h5>
+                  <h6>
+                  </h6>
+                </div>
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+              </div>
+              <p>
+Standard precautions consist of the following practices:<br>
+hand hygiene before and after all patient contact
+the use of personal protective equipment, which <br>may include gloves, impermeable gowns, plastic aprons, masks, face shields and eye protection
+the safe<br> use and disposal of sharps
+the use of aseptic "non-touch" technique for all invasive procedures, including<br> appropriate use of skin disinfectants
+reprocessing of reusable instruments and equipment
+<br>routine environmental cleaning
+waste management
+respiratory hygiene and cough etiquette
+<br>appropriate handling of linen.
+Standard precautions are the minimum infection prevention and control practices that must be used at all times for all patients in all situations.              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="client_info">
+                <div class="client_name">
+                  <h5>
+Transmission-based precautions
+                  </h5>
+                  <h6>
+                  </h6>
+                </div>
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+              </div>
+              <p>
+Transmission-based precautions (TBPs) are used in addition to standard <br>precautions when standard precautions <br>alone may be insufficient to prevent transmission of<br> infection. TBPs are used for patients known or <br>suspected to be infected or colonised<br> with epidemiologically important or highly <br>transmissible pathogens that can transmit or cause infection. </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end client section -->
+
+
+  <!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_menu">
+            <h5>
+              QUICK LINKS
+            </h5>
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}"> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}"> Diseases </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Sign in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_course">
+            <h5>
+              Health Checker
+            </h5>
+            <p>
+             Predict your diseases, get medication and treatment from professional physicians. Be healthy.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-5 offset-md-1">
+          <div class="info_news">
+            <h5>
+              FOR ANY QUERY, PLEASE WRITE TO US
+            </h5>
+            <div class="info_contact">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i> HealthChecker@mail.com
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i> Call : +91 1234567890
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By Health Checker
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <script src="{% static 'homepage/assets/home/js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'homepage/assets/home/js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <!-- custom js -->
+  <script src="{% static 'homepage/assets/home/js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+</body>
+
+</html>
+{% endblock %}
